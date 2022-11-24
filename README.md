@@ -1,12 +1,12 @@
 
 # A04 - Donorin
 
-## Anggota kelompok
-* Davina Fardya Zulfa Izzati
-* Faris Bayhaqi
-* Hanin Atina Rahmania
-* I Made Urip Subagyo
-* Salma Hanifah Hidayanti
+## Anggota kelompok dan Modul
+* Davina Fardya Zulfa Izzati - Penjadwalan
+* Faris Bayhaqi - User Dashboard
+* Hanin Atina Rahmania - Admin Dashboard
+* I Made Urip Subagyo - Login, Logout, Registration
+* Salma Hanifah Hidayanti - Landing Page
 
 ## Cerita aplikasi dan manfaat Donorin
 Ancaman kesehatan global merupakan isu yang tengah dibahas dalam G20. Setelah pandemi COVID-19 yang memengaruhi kesehatan banyak individu, penurunan kemampuan masyarakat untuk membantu dalam bidang kesehatan mulai terlihat. Data kantong darah yang diberikan oleh Provinsi Jawa Tengah mengalami kekurangan hingga 60 persen.
@@ -17,8 +17,6 @@ Oleh karena itu, Donorin hadir sebagai solusi isu kesehatan global dengan cara m
 
 ## Daftar modul
 ### Login, Logout, Registration
-I Made Urip Subagyo
-<br>
 Alur registration akun:
 
 Registration (email & password) → ketika login direct ke pengisian data diri, jika belum mengisi, pengguna tidak dapat mengakses fitur apa pun.
@@ -32,22 +30,16 @@ Setelah log in, akan terdapat form pengisian data diri pengguna dengan rincian s
 * Tanggal Lahir
 
 ### Landing Page
-Salma Hanifah Hidayanti
-<br>
 Berisi informasi atau berita seputar donor darah.
 
 Terdapat berbagai informasi mengenai donor darah, seperti pengertian, manfaat, persiapan yang diperlukan sebelum mendonor darah, dan lainnya.
 
 ### Admin Dashboard
-Hanin Atina Rahmania
-<br>
 Terdapat fitur memasukkan hasil screening kesehatan.
 
 Terdapat fitur untuk menerima atau menolak penjadwalan donor darah pengguna.
 
 ### User Dashboard
-Faris Bayhaqi
-<br>
 Pada bagian user dashboard akan berisikan fitur booking mengarah pada penjadwalan donor darah.
 
 Jumlah history sudah berapa kali donor atau menerima darah.
@@ -55,8 +47,6 @@ Jumlah history sudah berapa kali donor atau menerima darah.
 Melihat data hasil dari screening kesehatan.
 
 ### Penjadwalan Donor Darah
-Davina Fardya Zulfa Izzati
-<br>
 Dengan fitur ini, pengguna bisa menjadwalkan kedatangan mereka ke tempat donor darah. Ketika pengguna sudah mengisi data, data tersebut akan masuk ke dashboard admin untuk dikonfirmasi apakah pengguna dapat datang saat jadwal tersebut.
 
 ## Peran pengguna
