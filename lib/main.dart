@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'pages/welcome.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(WelcomePage());
 }
 
 class MyApp extends StatelessWidget {
