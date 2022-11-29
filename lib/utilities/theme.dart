@@ -16,8 +16,20 @@ TextStyle descriptionText = GoogleFonts.poppins(
   fontSize: 12,
 );
 
+TextStyle descriptionSign = GoogleFonts.poppins(
+  color: warmColor,
+  fontWeight: FontWeight.w400,
+  fontSize: 20,
+);
+
 TextStyle btnTextSgn = GoogleFonts.poppins(
   color: blackColor,
+  fontWeight: FontWeight.w700,
+  fontSize: 12,
+);
+
+TextStyle textBoldDirect = GoogleFonts.poppins(
+  color: whiteColor,
   fontWeight: FontWeight.w700,
   fontSize: 12,
 );

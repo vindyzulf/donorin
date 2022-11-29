@@ -1,8 +1,10 @@
+import 'package:donorin/pages/identity.dart';
 import 'package:flutter/material.dart';
 import 'pages/welcome.dart';
-
+import 'pages/signIn.dart';
+import 'pages/signUp.dart';
 void main() {
-  runApp(WelcomePage());
+  runApp(IdentitySubmitPage());
 }
 
 class MyApp extends StatelessWidget {
