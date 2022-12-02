@@ -1,3 +1,5 @@
+// ini gak tau mau dipake atau engga :<
+
 import 'package:flutter/material.dart';
 
 class BuatJadwalPage extends StatefulWidget {
@@ -90,5 +92,14 @@ class _BuatJadwalPageState extends State<BuatJadwalPage> {
                 )
             )
         )
+    }
+    
+    onPressed(BuildContext context) {
+        var data = DataJadwal(lokasi: _lokasi!, tanggal: tanggal);
+        dataList.add(data);
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const HistoryPage()),
+        );
     }
 }
