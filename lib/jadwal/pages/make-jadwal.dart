@@ -24,7 +24,7 @@ class _BuatJadwalPageState extends State<BuatJadwalPage> {
     final _formKey = GlobalKey<FormState>();
     List<String> listLokasi = ['Lokasi A', 'Lokasi B', 'Lokasi C', 'Lokasi D', 'LOkasi E'];
     String? _lokasi;
-    DateTime tanggal = DateTime.now();
+    String tanggal = dateFormat.format(DateTime.now());
 
     @override
     Widget build(BuildContext context) {
@@ -78,7 +78,7 @@ class _BuatJadwalPageState extends State<BuatJadwalPage> {
                                             lastDate: DateTime(2100)
                                         ).then((tanggal) {
                                             setState(() {
-                                            tanggal = tanggal!;
+                                            tanggal = "${tanggal!.day}/${tanggal!.month}/${tanggal!.year}";
                                             });
                                         });
                                         },
