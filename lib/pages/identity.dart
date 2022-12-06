@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 import "../utilities/color.dart";
 import "../utilities/theme.dart";
+import '../pages/signIn.dart';
 
 
 class IdentitySubmitPage extends StatefulWidget {
@@ -29,7 +30,12 @@ class _IdentitySubmit extends State<IdentitySubmitPage> {
                         Container(
                           alignment: Alignment.topLeft,
                           child: GestureDetector(
-                          onTap: () => {},
+                          onTap: () => {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(builder: (context) => SignInPage()),
+                              )
+                          },
                           child: Image.asset('back_white.png', height:37, width: 37,)
                         ),
                         ),

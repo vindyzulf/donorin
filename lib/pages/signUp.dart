@@ -1,3 +1,5 @@
+import 'package:donorin/pages/signIn.dart';
+import 'package:donorin/pages/welcome.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 import "../utilities/color.dart";
@@ -29,7 +31,13 @@ class _SignUp extends State<SignUpPage> {
                         Container(
                           alignment: Alignment.topLeft,
                           child: GestureDetector(
-                          onTap: () => {},
+                          onTap: () {
+                            Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => WelcomePage(),
+                            ),
+                        );
+                  },
                           child: Image.asset('back_white.png', height:37, width: 37,)
                         ),
                         ),
@@ -105,7 +113,13 @@ class _SignUp extends State<SignUpPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [Text("Don't have an account? ", style: descriptionText,), 
                             GestureDetector(
-                              onTap: () => {},
+                              onTap: (){
+                                Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => SignInPage(),
+                                ),
+                            );
+                              },
                               child: Text("Sign In", style: textBoldDirect),
                             )],),
                         )

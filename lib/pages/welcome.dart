@@ -1,3 +1,5 @@
+import 'package:donorin/pages/signIn.dart';
+import 'package:donorin/pages/signUp.dart';
 import "package:flutter/material.dart";
 import "../utilities/color.dart";
 import "../utilities/theme.dart";
@@ -26,7 +28,13 @@ class WelcomePage extends StatelessWidget{
               Spacer(),
               Padding(padding: const EdgeInsets.only(top: 52), //152
                 child: Row(children: [
-                  TextButton(onPressed: () => {}, child: Text("Register", style: btnTextSgn,), style: TextButton.styleFrom(
+                  TextButton(onPressed: () {
+                      Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => SignUpPage(),
+                            ),
+                        );
+                  }, child: Text("Register", style: btnTextSgn,), style: TextButton.styleFrom(
                     backgroundColor: warmButtonColor,
                     minimumSize: Size(141, 39),
                     shape: RoundedRectangleBorder( // <--- use this
@@ -36,7 +44,13 @@ class WelcomePage extends StatelessWidget{
                     ), 
                   )),
                   Spacer(),
-                  TextButton(onPressed: () => {}, child: Text("Sign In", style: btnTextSgn,),
+                  TextButton(onPressed: () {
+                      Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => SignInPage(),
+                            ),
+                        );
+                  }, child: Text("Sign In", style: btnTextSgn,),
                     style: TextButton.styleFrom(
                       backgroundColor: whiteColor,
                       minimumSize: Size(141, 44),

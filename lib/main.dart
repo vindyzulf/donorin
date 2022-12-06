@@ -4,7 +4,9 @@ import 'pages/welcome.dart';
 import 'pages/signIn.dart';
 import 'pages/signUp.dart';
 void main() {
-  runApp(IdentitySubmitPage());
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: WelcomePage()));
 }
 
 class MyApp extends StatelessWidget {
