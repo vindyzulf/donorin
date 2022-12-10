@@ -1,10 +1,12 @@
-//belom desain warna dll
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:donorin/main.dart';
-import 'package:donorin/page/landing.dart';
+
+import 'package:donorin/landing/page/landing.dart';
+import 'package:donorin/landing/utilities/theme.dart';
+
+import 'package:donorin/landing/utilities/drawerTest.dart';
 
 var dataList = [];
 
@@ -27,8 +29,15 @@ class _MyNewsFormPageState extends State<MyNewsFormPage> {
     Widget build(BuildContext context) {
         return Scaffold(
             appBar: AppBar(
-                title: Text('Add News'),
+                //title: Text('Add News', style: headWelcome),
+                backgroundColor: Color(0xFFEB1D36),
+                shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(
+                  bottom: Radius.circular(50),
+                ),
+              ),
             ),
+            drawer: const DrawerBar(),
             
             body: Form(
               key: _formKey,
@@ -43,7 +52,7 @@ class _MyNewsFormPageState extends State<MyNewsFormPage> {
                         padding: const EdgeInsets.all(8.0),
                         child: TextFormField(
                             decoration: InputDecoration(
-                                hintText: "Judul",
+                                hintText: "Title",
                                 // Menambahkan circular border agar lebih rapi
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(5.0),
@@ -64,7 +73,7 @@ class _MyNewsFormPageState extends State<MyNewsFormPage> {
                             // Validator sebagai validasi form
                             validator: (String? value) {
                                 if (value == null || value.isEmpty) {
-                                    return 'Judul tidak boleh kosong!';
+                                    return 'Title must be filled';
                                 }
                                 return null;
                             },
@@ -76,7 +85,7 @@ class _MyNewsFormPageState extends State<MyNewsFormPage> {
                         padding: const EdgeInsets.all(8.0),
                         child: TextFormField(
                             decoration: InputDecoration(
-                                hintText: "Deskripsi",
+                                hintText: "Description",
                                 // Menambahkan circular border agar lebih rapi
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(5.0),
@@ -97,7 +106,7 @@ class _MyNewsFormPageState extends State<MyNewsFormPage> {
                             // Validator sebagai validasi form
                             validator: (String? value) {
                                 if (value == null || value.isEmpty) {
-                                    return 'Deskripsi tidak boleh kosong!';
+                                    return 'Description must be filled';
                                 }
                                 return null;
                             },
@@ -110,7 +119,7 @@ class _MyNewsFormPageState extends State<MyNewsFormPage> {
             ),
 
             //BUTTON SIMPAN
-            floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, 
+            floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat, 
             floatingActionButton: Container(
               padding: const EdgeInsets.all(15),
               child: Row(
@@ -118,11 +127,11 @@ class _MyNewsFormPageState extends State<MyNewsFormPage> {
                 children: [
                   TextButton(
                     child: const Text(
-                      "Simpan",
+                      "Save",
                       style: TextStyle(color: Colors.white),
                     ),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.blue),
+                      backgroundColor: MaterialStateProperty.all(Color(0xFFEB1D36)),
                     ),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
@@ -142,13 +151,13 @@ class _MyNewsFormPageState extends State<MyNewsFormPage> {
                                   padding: const EdgeInsets.only(top: 20, bottom: 20),
                                   shrinkWrap: true,
                                   children: <Widget>[
-                                    Center(child: Text('Penambahan berita tersimpan')),
+                                    Center(child: Text('News added')),
                                     SizedBox(height: 20),
                                     TextButton(
                                       onPressed: () {
                                         Navigator.pop(context);
                                       },
-                                      child: Text('Kembali'),
+                                      child: Text('Back'),
                                     ), 
                                   ],
                                 ),
