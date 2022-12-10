@@ -1,8 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:jim/jadwal/model/history_model.dart';
-import 'package:jim/jadwal/pages/history_detail.dart';
-import 'package:jim/jadwal/fetch.dart';
+import 'package:donorin/jadwal/model/history_model.dart';
+import 'package:donorin/jadwal/pages/history_detail.dart';
+import 'package:donorin/jadwal/fetch.dart';
+import 'package:donorin/jadwal/utilities/fortest.dart';
 
 class HistoryPage extends StatefulWidget {
   const HistoryPage({super.key});
@@ -52,6 +53,7 @@ class _HistoryPageState extends State<HistoryPage> {
       appBar: AppBar(
         title: const Text('History'),
       ),
+      drawer: const DrawerBar(),
       body: FutureBuilder(
           future: historyFetch(),
           builder: (context, AsyncSnapshot snapshot) {

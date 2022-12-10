@@ -1,6 +1,8 @@
 // ini gak tau mau dipake atau engga :<
 
 import 'package:flutter/material.dart';
+import 'package:donorin/jadwal/utilities/fortest.dart';
+import 'package:donorin/jadwal/pages/history_page.dart';
 
 class BuatJadwalPage extends StatefulWidget {
   const BuatJadwalPage({super.key});
@@ -11,7 +13,7 @@ class BuatJadwalPage extends StatefulWidget {
 
 class DataJadwal {
     late String lokasi;
-    late DateTime tanggal;
+    late String tanggal;
 
     DataJadwal (
         {required this.lokasi, required this.tanggal}
@@ -24,7 +26,7 @@ class _BuatJadwalPageState extends State<BuatJadwalPage> {
     final _formKey = GlobalKey<FormState>();
     List<String> listLokasi = ['Lokasi A', 'Lokasi B', 'Lokasi C', 'Lokasi D', 'LOkasi E'];
     String? _lokasi;
-    String tanggal = dateFormat.format(DateTime.now());
+    String tanggal = "30-12-2022";
 
     @override
     Widget build(BuildContext context) {
@@ -32,6 +34,7 @@ class _BuatJadwalPageState extends State<BuatJadwalPage> {
             appBar: AppBar(
                 title: Text('Buat Jadwal Baru'),
             ),
+            drawer: const DrawerBar(),
             body:Form(
                 key:_formKey,
                 child: SingleChildScrollView(
@@ -65,22 +68,29 @@ class _BuatJadwalPageState extends State<BuatJadwalPage> {
                                     )
                                 ),
 
-                                ListTile(
-                                    title: Text("${tanggal.day}/${tanggal.month}/${tanggal.year}"),
-                                    leading: TextButton.icon(
-                                        label: const Text('Tanggal'),
-                                        icon: const Icon(Icons.calendar_month_outlined),
-                                        onPressed: () {
-                                        showDatePicker(
-                                            context: context, 
-                                            initialDate: DateTime.now(), 
-                                            firstDate: DateTime(2021), 
-                                            lastDate: DateTime(2100)
-                                        ).then((tanggal) {
-                                            setState(() {
-                                            tanggal = "${tanggal!.day}/${tanggal!.month}/${tanggal!.year}";
-                                            });
-                                        });
+                                Padding(
+                                    padding: const EdgeInsets.all(8),
+                                    child: TextFormField(
+                                        decoration: InputDecoration(
+                                            hintText: 'Tanggal',
+                                            labelText: 'DD-MM-YYYY',
+                                            border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+                                            ),
+                                            onChanged: (String? value) {
+                                                setState(() {
+                                                    tanggal = value!;
+                                                });
+                                            },
+                                            onSaved: (String? value) {
+                                                setState(() {
+                                                    tanggal = value!;
+                                                });
+                                            },
+                                            validator: (String? value) {
+                                                if (value==null || value.isEmpty) {
+                                                    return 'Tanggal tidak boleh kosong';
+                                                } 
+                                                return null;
                                         },
                                     ),
                                 ),
@@ -91,7 +101,7 @@ class _BuatJadwalPageState extends State<BuatJadwalPage> {
                     )
                 )
             )
-        )
+        );
     }
     
     onPressed(BuildContext context) {

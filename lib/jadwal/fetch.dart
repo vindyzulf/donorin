@@ -1,6 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'model/history_model.dart';
+import 'package:donorin/jadwal/model/history_model.dart';
 
 Future<List<History>> historyFetch() async {
   var url = Uri.parse('');
