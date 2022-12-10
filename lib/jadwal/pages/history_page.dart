@@ -26,13 +26,16 @@ class _HistoryPageState extends State<HistoryPage> {
       title: Text(
         history.tanggal,
       ),
-      onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) =>
-                    HistoryDetailPage(history: history)));
-      },
+      subtitle: Text(
+        history.lokasi,
+      ),
+      // onTap: () {
+      //   Navigator.push(
+      //       context,
+      //       MaterialPageRoute(
+      //           builder: (context) =>
+      //               HistoryDetailPage(history: history)));
+      // },
     );
 
     Card makeCard(History history) => Card(
