@@ -195,7 +195,7 @@ class _MyLandingPageState extends State<MyLandingPage> {
                   ]),
                 ),
 
-                
+                /*
                 Container(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -235,7 +235,7 @@ class _MyLandingPageState extends State<MyLandingPage> {
                       ),
                     ],
                   ),
-                ),
+                ),*/
 
               ],
             ),
