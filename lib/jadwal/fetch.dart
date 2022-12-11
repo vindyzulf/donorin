@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:donorin/jadwal/model/history_model.dart';
 
 Future<List<History>> historyFetch() async {
-  var url = Uri.parse('');
+  var url = Uri.parse('http://localhost:8000/');
   var response = await http.get(
     url,
     headers: {

@@ -24,7 +24,7 @@ List<DataJadwal> dataList = [];
 
 class _BuatJadwalPageState extends State<BuatJadwalPage> {
     final _formKey = GlobalKey<FormState>();
-    List<String> listLokasi = ['Lokasi A', 'Lokasi B', 'Lokasi C', 'Lokasi D', 'LOkasi E'];
+    List<String> listLokasi = ['PMI Provinsi DKI Jakarta', 'PMI Kota Jakarta Utara', 'PMI Kota Jakarta Pusat', 'PMI Kota Jakarta Timur', 'PMI Kota Jakarta Barat', 'PMI Kota Jakarta Selatan'];
     String? _lokasi;
     String tanggal = "30-12-2022";
 
@@ -72,8 +72,8 @@ class _BuatJadwalPageState extends State<BuatJadwalPage> {
                                     padding: const EdgeInsets.all(8),
                                     child: TextFormField(
                                         decoration: InputDecoration(
-                                            hintText: 'Tanggal',
-                                            labelText: 'DD-MM-YYYY',
+                                            hintText: 'DD-MM-YYYY (masukkan tanggal yang valid sesuai format)',
+                                            labelText: 'Tanggal',
                                             border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
                                             ),
                                             onChanged: (String? value) {
@@ -96,6 +96,51 @@ class _BuatJadwalPageState extends State<BuatJadwalPage> {
                                 ),
 
                                 // TODO: tombol simpan
+                                Container(
+                                    padding: const EdgeInsets.only(top: 30),
+                                    alignment: Alignment.bottomCenter,
+                                    child: TextButton(
+                                    child: const Text(
+                                        'Simpan',
+                                        style: TextStyle(color: Colors.white),
+                                    ),
+                                    style: ButtonStyle(
+                                        backgroundColor: MaterialStateProperty.all(Colors.red),
+                                    ),
+                                        onPressed: () {
+                                        if (_formKey.currentState!.validate()) {
+                                            if (tanggal == null || tanggal == '') {
+                                            showDialog(
+                                                context: context, 
+                                                builder: (context) {
+                                                return Dialog(
+                                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(7)),
+                                                    elevation: 10,
+                                                    child: ListView(
+                                                    padding: const EdgeInsets.symmetric(vertical: 20),
+                                                    shrinkWrap: true,
+                                                    children: <Widget>[
+                                                        const Center(child: Text('Tanggal'),),
+                                                        const SizedBox(height: 25,),
+                                                        TextButton(
+                                                        onPressed: () {
+                                                            Navigator.pop(context);
+                                                        }, 
+                                                        child: const Text('Buat Jadwal'),
+                                                        ),
+                                                    ],
+                                                ),
+                                            );
+                                            },
+                                        );
+                                        }
+                                        else {
+                                            onPressed(context);
+                                        }
+                                    }   
+                                },
+                                    ),
+                                )
                             ]
                         )
                     )
