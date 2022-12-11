@@ -46,6 +46,14 @@ class _MyNewsFormPageState extends State<MyNewsFormPage> {
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
                     children: [
+                      
+                      SizedBox(height: 30),
+                      Container(
+                        child: Column(children: [
+                          Text("Add your news here", style: headText),
+                        ]),
+                      ),
+                      SizedBox(height: 30),
 
                       //JUDUL
                       Padding(
