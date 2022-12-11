@@ -67,6 +67,9 @@ class WelcomePage extends StatelessWidget{
           )
         ),
       ),
+      routes: {
+        "/login": (BuildContext context) => SignInPage(),
+      },
     );
   }
 }
