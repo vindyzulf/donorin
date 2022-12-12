@@ -16,14 +16,15 @@ class HistoryFetch {
       final body = json.encode({"user_id": userId});
 
       final response = await http.post(
-            Uri.parse('http://127.0.0.1:8000/jadwal/get-jadwal-user/'),
-            headers: <String, String>{
-              'Content-Type': 'application/json; charset=UTF-8',
-            },
-            body: {'user_id': 'admin2'},
-          );
-
-      print(response);
+          Uri.parse('http://127.0.0.1:8000/jadwal/get-jadwal-user/'),
+          headers: <String, String>{
+            'Content-Type': 'application/json; charset=UTF-8',
+          },
+          body: jsonEncode(<String, String>{
+            'user_id': 'admin2',
+          }),
+        );
+      print(response.body);
       if (response.statusCode == 200) {
         List<dynamic> res = json.decode(response.body);
         List<BaseResponseHistory> data = [];
