@@ -8,7 +8,7 @@ class HistoryFetch {
   Future<ResponseModel> getHistoryFetch() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      final int? userId = prefs.getInt('USERID');
+      final String? userId = "admin2";
 
       if (userId == null) {
         ResponseModel(msg: "User tidak ditemukan, silahkan login kembali", data: List.empty());
@@ -16,14 +16,14 @@ class HistoryFetch {
       final body = json.encode({"user_id": userId});
 
       final response = await http.post(
-          Uri.parse(
-              'http://10.0.2.2:8000//jadwal/get-jadwal-user/'),
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            'Content-Type': 'application/json',
-          },
-          body: body);
+            Uri.parse('http://127.0.0.1:8000/jadwal/get-jadwal-user/'),
+            headers: <String, String>{
+              'Content-Type': 'application/json; charset=UTF-8',
+            },
+            body: {'user_id': 'admin2'},
+          );
 
+      print(response);
       if (response.statusCode == 200) {
         List<dynamic> res = json.decode(response.body);
         List<BaseResponseHistory> data = [];
