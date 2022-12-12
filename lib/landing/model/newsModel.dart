@@ -10,6 +10,30 @@ String landingToJson(List<Landing> data) => json.encode(List<dynamic>.from(data.
 
 class Landing {
     Landing({
+        required this.model,
+        required this.pk,
+        required this.fields,
+    });
+
+    String model;
+    int pk;
+    Fields fields;
+
+    factory Landing.fromJson(Map<String, dynamic> json) => Landing(
+        model: json["model"],
+        pk: json["pk"],
+        fields: Fields.fromJson(json["fields"]),
+    );
+
+    Map<String, dynamic> toJson() => {
+        "model": model,
+        "pk": pk,
+        "fields": fields.toJson(),
+    };
+}
+
+class Fields {
+    Fields({
         required this.title,
         required this.description,
     });
@@ -17,7 +41,7 @@ class Landing {
     String title;
     String description;
 
-    factory Landing.fromJson(Map<String, dynamic> json) => Landing(
+    factory Fields.fromJson(Map<String, dynamic> json) => Fields(
         title: json["title"],
         description: json["description"],
     );

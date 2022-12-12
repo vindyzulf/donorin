@@ -31,11 +31,11 @@ class _MyNewsFormPageState extends State<MyNewsFormPage> {
             appBar: AppBar(
                 //title: Text('Add News', style: headWelcome),
                 backgroundColor: Color(0xFFEB1D36),
-                shape: RoundedRectangleBorder(
+                /*shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.vertical(
                   bottom: Radius.circular(50),
                 ),
-              ),
+              ),*/
             ),
             drawer: const DrawerBar(),
             

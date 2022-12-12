@@ -1,17 +1,11 @@
-import 'package:http/http.dart' as http;
+/* 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:donorin/landing/model/newsModel.dart';
 
-Future<List<Landing>> fetchArtikel() async {
+Future<http.Response> fetchLanding() async {
   var url =
-      Uri.parse('http://localhost:8000/');
-  var response = await http.get(
-    url,
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Content-Type": "application/json",
-    },
-  );
+      Uri.parse('http://localhost:8000/landing/addNews/');
+  var response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
 
   // melakukan decode response menjadi bentuk json
   var data = jsonDecode(utf8.decode(response.bodyBytes));
@@ -24,5 +18,5 @@ Future<List<Landing>> fetchArtikel() async {
     }
   }
 
-  return listArtikel;
-}
+  ret
+}*/

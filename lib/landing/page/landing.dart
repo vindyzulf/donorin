@@ -24,11 +24,11 @@ class _MyLandingPageState extends State<MyLandingPage> {
           appBar: AppBar(
               //title: Text('Donorin', style: headWelcome),
               backgroundColor: Color(0xFFEB1D36),
-              shape: RoundedRectangleBorder(
+              /*shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.vertical(
                   bottom: Radius.circular(50),
                 ),
-              ),
+              ),*/
               actions: <Widget>[
                 IconButton(
                   icon: const Icon(Icons.login),
