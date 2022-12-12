@@ -1,5 +1,6 @@
 import 'package:donorin/common/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:donorin/widgets/drawer.dart';
 
 class UserDashboardPage extends StatelessWidget {
   const UserDashboardPage({super.key});
@@ -15,6 +16,7 @@ class UserDashboardPage extends StatelessWidget {
           height: 50,
         ),
       ),
+      drawer: drawer(context),
       body: Padding(
         padding: const EdgeInsets.all(30.0),
         child: GridView(
@@ -33,7 +35,7 @@ class UserDashboardPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Your Summaries :",
+                    "Your Summaries",
                     style: myTextTheme.headline3,
                   )
                 ],
@@ -94,11 +96,11 @@ class UserDashboardPage extends StatelessWidget {
                 child: Center(
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => const BuatJadwalPage))
+                      // Navigator.pushReplacement(
+                      // context,
+                      // MaterialPageRoute(builder: (context) => const BuatJadwalPage))
                     },
-                    style: ElevatedButton.styleFrom(
+                    style: TextButton.styleFrom(
                         backgroundColor: warmButtonColor,
                         padding: const EdgeInsets.symmetric(
                             horizontal: 10, vertical: 10),

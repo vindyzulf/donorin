@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'common/constants.dart';
-import 'package:donorin/user_dashboard.dart';
+import 'package:donorin/pages/user_dashboard.dart';
 
 void main() {
   runApp(const MyApp());
