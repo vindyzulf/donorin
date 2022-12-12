@@ -1,3 +1,4 @@
+import 'package:donorin/pages/identity.dart';
 import 'package:donorin/pages/signUp.dart';
 import 'package:donorin/pages/welcome.dart';
 import "package:flutter/material.dart";
@@ -158,11 +159,20 @@ class _SignIn extends State<SignInPage> {
                           });
                           if(request.loggedIn){
                             _formKeyLogin.currentState!.reset();
-                            Navigator.push(
+                            if(loginResponse['data_field'] == false){
+                              Navigator.push(
+                              context
+                              , 
+                              // DUMMY DIRECT PAGE
+                              MaterialPageRoute(builder: (context) => IdentitySubmitPage(username: loginResponse['user_name'])));
+                            } else {
+                              Navigator.push(
                               context
                               , 
                               // DUMMY DIRECT PAGE
                               MaterialPageRoute(builder: (context) => WelcomePage()));
+                            }
+                            
                           }
                           else {
                             showDialog(
