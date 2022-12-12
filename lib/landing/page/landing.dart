@@ -15,7 +15,7 @@ class MyLandingPage extends StatefulWidget {
 }
 
 class _MyLandingPageState extends State<MyLandingPage> {
-  final _formKey = GlobalKey<FormState>();
+  //final _formKey = GlobalKey<FormState>();
 
     @override
     Widget build(BuildContext context) {
@@ -33,11 +33,18 @@ class _MyLandingPageState extends State<MyLandingPage> {
                 IconButton(
                   icon: const Icon(Icons.login),
                   tooltip: 'Sign In',
-                  onPressed: () {},
+                  onPressed: () {
+                    /*Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => WelcomePage(),
+                    ),
+                    ); */
+                  },
                 ),
               ],
           ),
 
+          //IMAGE BACKGROUND
           body: Center(
             child: Column(
               children: <Widget>[
@@ -66,6 +73,7 @@ class _MyLandingPageState extends State<MyLandingPage> {
                   ]),
                 ),
 
+                // INFO DONORIN
                 SizedBox(height: 20),
                 Expanded(
                   child: SingleChildScrollView(
@@ -195,47 +203,49 @@ class _MyLandingPageState extends State<MyLandingPage> {
                   ]),
                 ),
 
-                /*
-                Container(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget> [
-                      Expanded(
-                        child: ListView.builder(
-                          itemCount: dataList.length,
-                          itemBuilder: (context, index) {
-                            return Card(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  Padding(
-                                    padding: EdgeInsets.all(10.0),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      children: [
-                                        Text(dataList[index][0], style: headText),
-                                      ],
+                
+                Expanded(
+                  //child: SingleChildScrollView(
+                  //  scrollDirection: Axis.vertical,
+                    child: Row(
+                      children: <Widget> [
+                        Expanded(
+                          child: ListView.builder(
+                            itemCount: dataList.length,
+                            itemBuilder: (context, index) {
+                              return Card(
+                                color: Color.fromARGB(1, 46, 45, 45),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: EdgeInsets.all(10.0),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        children: [
+                                          Text(dataList[index][0], style: headText),
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.all(10.0),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(dataList[index][1], style: btnTextSgn),
-                                      ],
+                                    Padding(
+                                      padding: EdgeInsets.all(10.0),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(dataList[index][1], style: btnTextSgn),
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                ),*/
+                      ],
+                    ),
+                  //),
+                ),
 
               ],
             ),
