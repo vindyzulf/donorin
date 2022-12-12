@@ -27,13 +27,16 @@ class _HistoryPageState extends State<HistoryPage> {
       title: Text(
         history.fields.date,
       ),
-      // onTap: () {
-      //   Navigator.push(
-      //       context,
-      //       MaterialPageRoute(
-      //           builder: (context) =>
-      //               HistoryDetailPage(history: history)));
-      // },
+      subtitle: Text(
+        history.fields.loc,
+      ),
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    HistoryDetailPage(history: history)));
+      },
     );
 
     Card makeCard(Jadwal history) => Card(
