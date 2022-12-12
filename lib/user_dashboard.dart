@@ -94,9 +94,9 @@ class UserDashboardPage extends StatelessWidget {
                 child: Center(
                   child: ElevatedButton(
                     onPressed: () {
-                      // Navigator.pushReplacement(
-                      // context,
-                      // MaterialPageRoute(builder: (context) => const BuatJadwalPage))
+                      Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => const BuatJadwalPage))
                     },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: warmButtonColor,
