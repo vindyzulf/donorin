@@ -1,3 +1,4 @@
+import 'package:donorin/pages/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -32,13 +33,13 @@ class _MyLandingPageState extends State<MyLandingPage> {
               actions: <Widget>[
                 IconButton(
                   icon: const Icon(Icons.login),
-                  tooltip: 'Sign In',
+                  tooltip: 'Sign Out',
                   onPressed: () {
-                    /*Navigator.of(context).push(
+                    Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => WelcomePage(),
                     ),
-                    ); */
+                    );
                   },
                 ),
               ],
