@@ -9,6 +9,7 @@ class HistoryFetch {
     try {
       final prefs = await SharedPreferences.getInstance();
       final int? userId = prefs.getInt('USERID');
+
       if (userId == null) {
         ResponseModel(msg: "User tidak ditemukan, silahkan login kembali", data: List.empty());
       }
@@ -16,16 +17,17 @@ class HistoryFetch {
 
       final response = await http.post(
           Uri.parse(
-              'http://localhost:8000/jadwal/get-jadwal-user/'),
+              'http://10.0.2.2:8000//jadwal/get-jadwal-user/'),
           headers: {
             "Access-Control-Allow-Origin": "*",
             'Content-Type': 'application/json',
           },
           body: body);
+
       if (response.statusCode == 200) {
         List<dynamic> res = json.decode(response.body);
         List<BaseResponseHistory> data = [];
-        for (int i = 0; i < res.length; i++) {
+      for (int i = 0; i < res.length; i++) {
           data.add(BaseResponseHistory.fromJson(
               res[i] as Map<String, dynamic>));
         }

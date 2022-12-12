@@ -8,9 +8,9 @@ class BaseResponseHistory {
     required this.fields,
   });
 
-  String model;
-  int pk;
-  History fields;
+  final String model;
+  final int pk;
+  final History fields;
 
   factory BaseResponseHistory.fromJson(Map<String, dynamic> json) => BaseResponseHistory(
     model: json["model"],

@@ -17,7 +17,7 @@ class _HistoryPageState extends State<HistoryPage> {
     @override
     Widget build(BuildContext context) {
         // TODO
-    ListTile makeListTile(History history) => ListTile(
+    ListTile makeListTile(BaseResponseHistory history) => ListTile(
       contentPadding:
       const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
       leading: Container(
@@ -25,10 +25,7 @@ class _HistoryPageState extends State<HistoryPage> {
         child: const Icon(Icons.autorenew, color: Colors.white),
       ),
       title: Text(
-        history.date,
-      ),
-      subtitle: Text(
-        history.loc,
+        history.fields.date,
       ),
       // onTap: () {
       //   Navigator.push(
@@ -39,7 +36,7 @@ class _HistoryPageState extends State<HistoryPage> {
       // },
     );
 
-    Card makeCard(History history) => Card(
+    Card makeCard(BaseResponseHistory history) => Card(
       margin: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 1),
       elevation: 4,
       shape: RoundedRectangleBorder(
@@ -58,26 +55,39 @@ class _HistoryPageState extends State<HistoryPage> {
         title: const Text('History'),
       ),
       drawer: const DrawerBar(),
-      body: FutureBuilder(
+      body: FutureBuilder<ResponseModel>(
           future: HistoryFetch().getHistoryFetch(),
           builder: (context, AsyncSnapshot snapshot) {
-            if (snapshot.data == null) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
               return const Center(child: CircularProgressIndicator());
             } else {
-              if (!snapshot.hasData) {
+              if (snapshot.hasData) {
+                ResponseModel data = snapshot.data;
+                if (data.data.isNotEmpty) {
+                  return ListView.builder(
+                      itemCount: data.data.length,
+                      itemBuilder: (_, index) =>
+                          makeCard(data.data[index]));
+                } else {
+                  return const Center(
+                    child:
+                    Text(
+                      "Belum ada riwayat donor",
+                      style:
+                      TextStyle(color: Colors.red, fontSize: 20),
+                    ),
+                  );
+                }
+              } else {
                 return Column(
                   children: const [
                     Text(
-                      "Belum ada data",
-                      style: TextStyle(color: Colors.black, fontSize: 20),
+                      "Belum ada riwayat donor",
+                      style: TextStyle(color: Colors.red, fontSize: 20),
                     ),
                     SizedBox(height: 8),
                   ],
                 );
-              } else {
-                return ListView.builder(
-                    itemCount: snapshot.data!.length,
-                    itemBuilder: (_, index) => makeCard(snapshot.data![index]));
               }
             }
           }),
