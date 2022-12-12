@@ -8,5 +8,5 @@ class ResponseModel {
   });
 
   final String msg;
-  final List<BaseResponseHistory> data;
+  final List<Jadwal> data;
 }

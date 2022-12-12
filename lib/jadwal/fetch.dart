@@ -24,13 +24,13 @@ class HistoryFetch {
             'user_id': 'admin2',
           }),
         );
-      print(response.body);
+      
       if (response.statusCode == 200) {
         List<dynamic> res = json.decode(response.body);
-        List<BaseResponseHistory> data = [];
+        List<Jadwal> data = [];
       for (int i = 0; i < res.length; i++) {
-          data.add(BaseResponseHistory.fromJson(
-              res[i] as Map<String, dynamic>));
+
+        data.add(Jadwal.fromJson(res[i] as Map<String, dynamic>));
         }
         return ResponseModel(msg: "Berhasil", data: data);
       }

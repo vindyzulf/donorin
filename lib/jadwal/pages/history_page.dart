@@ -17,7 +17,7 @@ class _HistoryPageState extends State<HistoryPage> {
     @override
     Widget build(BuildContext context) {
         // TODO
-    ListTile makeListTile(BaseResponseHistory history) => ListTile(
+    ListTile makeListTile(Jadwal history) => ListTile(
       contentPadding:
       const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
       leading: Container(
@@ -36,7 +36,7 @@ class _HistoryPageState extends State<HistoryPage> {
       // },
     );
 
-    Card makeCard(BaseResponseHistory history) => Card(
+    Card makeCard(Jadwal history) => Card(
       margin: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 1),
       elevation: 4,
       shape: RoundedRectangleBorder(
