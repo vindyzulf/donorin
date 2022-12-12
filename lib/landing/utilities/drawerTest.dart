@@ -1,12 +1,10 @@
-import 'package:donorin/landing/model/newsModel.dart';
-import 'package:donorin/landing/page/landing.dart';
 import 'package:flutter/material.dart';
-import 'package:donorin/jadwal/pages/make_jadwal.dart';
-import 'package:donorin/jadwal/pages/history_page.dart';
+import 'package:donorin/landing/page/landing.dart';
+import 'package:donorin/landing/page/newsForm.dart';
 import 'package:donorin/main.dart';
 
-class DrawerBar extends StatelessWidget {
-    const DrawerBar({super.key});
+class DrawerBar1 extends StatelessWidget {
+    const DrawerBar1({super.key});
 
     @override
     Widget build(BuildContext context) {
@@ -18,25 +16,25 @@ class DrawerBar extends StatelessWidget {
                         onTap: () {
                             Navigator.pushReplacement(
                                 context,
-                                MaterialPageRoute(builder: (context) => MyLandingPage()),
+                                MaterialPageRoute(builder: (context) => const MyHomePage(title: 'Main')),
                             );
                         },
                     ),
                     ListTile(
-                        title: const Text('Buat Jadwal'),
+                        title: const Text('Landing'),
                         onTap: () {
                             Navigator.pushReplacement(
                                 context,
-                                MaterialPageRoute(builder: (context) => const BuatJadwalPage()),
+                                MaterialPageRoute(builder: (context) => const MyLandingPage()),
                             );
                         },
                     ),
                     ListTile(
-                        title: const Text('History'),
+                        title: const Text('News Form'),
                         onTap: () {
                             Navigator.pushReplacement(
                                 context,
-                                MaterialPageRoute(builder: (context) => const HistoryPage()),
+                                MaterialPageRoute(builder: (context) => const MyNewsFormPage()),
                             );
                         },
                     ),

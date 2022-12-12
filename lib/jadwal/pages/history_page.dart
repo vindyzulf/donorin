@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:donorin/pages/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:donorin/jadwal/model/history_model.dart';
 import 'package:donorin/jadwal/pages/history_detail.dart';
@@ -8,6 +9,8 @@ import 'package:donorin/jadwal/utilities/fortest.dart';
 
 class HistoryPage extends StatefulWidget {
   const HistoryPage({super.key});
+
+
 
   @override
   State<HistoryPage> createState() => _HistoryPageState();
@@ -56,6 +59,7 @@ class _HistoryPageState extends State<HistoryPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('History'),
+        backgroundColor: Color(0xFFEB1D36),
       ),
       drawer: const DrawerBar(),
       body: FutureBuilder<ResponseModel>(

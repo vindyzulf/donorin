@@ -33,6 +33,7 @@ class _BuatJadwalPageState extends State<BuatJadwalPage> {
         return Scaffold(
             appBar: AppBar(
                 title: Text('Buat Jadwal Baru'),
+                backgroundColor: Color(0xFFEB1D36),
             ),
             drawer: const DrawerBar(),
             body:Form(
@@ -105,7 +106,7 @@ class _BuatJadwalPageState extends State<BuatJadwalPage> {
                                         style: TextStyle(color: Colors.white),
                                     ),
                                     style: ButtonStyle(
-                                        backgroundColor: MaterialStateProperty.all(Colors.red),
+                                        backgroundColor: MaterialStateProperty.all(Color(0xFFEB1D36)),
                                     ),
                                         onPressed: () {
                                         if (_formKey.currentState!.validate()) {

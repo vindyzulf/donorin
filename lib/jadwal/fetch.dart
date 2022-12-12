@@ -1,14 +1,17 @@
+import 'package:donorin/pages/signin.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:donorin/jadwal/model/history_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:donorin/jadwal/model/base_response.dart';
 
+
 class HistoryFetch {
   Future<ResponseModel> getHistoryFetch() async {
+
     try {
       final prefs = await SharedPreferences.getInstance();
-      final String? userId = "admin2";
+      final String? userId = username_all;
 
       if (userId == null) {
         ResponseModel(msg: "User tidak ditemukan, silahkan login kembali", data: List.empty());
@@ -21,7 +24,7 @@ class HistoryFetch {
             'Content-Type': 'application/json; charset=UTF-8',
           },
           body: jsonEncode(<String, String>{
-            'user_id': 'admin2',
+            'user_id': '$userId',
           }),
         );
       
