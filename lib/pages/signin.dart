@@ -1,3 +1,4 @@
+import 'package:donorin/landing/page/landing.dart';
 import 'package:donorin/pages/identity.dart';
 import 'package:donorin/pages/signUp.dart';
 import 'package:donorin/pages/welcome.dart';
@@ -170,7 +171,7 @@ class _SignIn extends State<SignInPage> {
                               context
                               , 
                               // DUMMY DIRECT PAGE
-                              MaterialPageRoute(builder: (context) => WelcomePage()));
+                              MaterialPageRoute(builder: (context) =>  MyLandingPage()));
                             }
                             
                           }
