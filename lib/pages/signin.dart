@@ -11,6 +11,7 @@ import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:http/http.dart' as http;
 
 
+var username_all;
 
 class SignInPage extends StatefulWidget {
     @override
@@ -160,11 +161,13 @@ class _SignIn extends State<SignInPage> {
                           });
                           if(request.loggedIn){
                             _formKeyLogin.currentState!.reset();
+
                             if(loginResponse['data_field'] == false){
+                              username_all = loginResponse['user_name'];
                               Navigator.push(
                               context
                               , 
-                              // DUMMY DIRECT PAGE
+                              // DUMMY DIRECT PAGEF
                               MaterialPageRoute(builder: (context) => IdentitySubmitPage(username: loginResponse['user_name'])));
                             } else {
                               Navigator.push(

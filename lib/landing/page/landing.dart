@@ -1,3 +1,5 @@
+import 'package:donorin/jadwal/utilities/fortest.dart';
+import 'package:donorin/landing/utilities/drawerTest.dart';
 import 'package:donorin/pages/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -46,6 +48,7 @@ class _MyLandingPageState extends State<MyLandingPage> {
           ),
 
           //IMAGE BACKGROUND
+          drawer: const DrawerBar(),
           body: Center(
             child: Column(
               children: <Widget>[
