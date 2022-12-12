@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:donorin/jadwal/model/history_model.dart';
 import 'package:donorin/jadwal/pages/history_detail.dart';
 import 'package:donorin/jadwal/fetch.dart';
+import 'package:donorin/jadwal/model/base_response.dart';
 import 'package:donorin/jadwal/utilities/fortest.dart';
 
 class HistoryPage extends StatefulWidget {
@@ -24,10 +25,10 @@ class _HistoryPageState extends State<HistoryPage> {
         child: const Icon(Icons.autorenew, color: Colors.white),
       ),
       title: Text(
-        history.tanggal,
+        history.date,
       ),
       subtitle: Text(
-        history.lokasi,
+        history.loc,
       ),
       // onTap: () {
       //   Navigator.push(
@@ -58,7 +59,7 @@ class _HistoryPageState extends State<HistoryPage> {
       ),
       drawer: const DrawerBar(),
       body: FutureBuilder(
-          future: historyFetch(),
+          future: HistoryFetch().getHistoryFetch(),
           builder: (context, AsyncSnapshot snapshot) {
             if (snapshot.data == null) {
               return const Center(child: CircularProgressIndicator());
